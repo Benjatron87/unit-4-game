@@ -1,0 +1,21 @@
+
+body {
+    background-color: black;
+}
+
+#background-image {
+    float: right;
+    height: 150px;
+    width: 700px;
+    margin-right: 50px;
+}
+
+#title {
+    color: rgb(249,173,0);
+    clear: right;
+    float: right;
+    margin-right: 300px;
+    font-size: 30px;
+    font-family: fantasy;
+    text-shadow: -2px 0px 0px rgb(161,82,0);
+}
