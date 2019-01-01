@@ -5,8 +5,9 @@
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        <script src="assets/javascript/game.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script src="assets/javascript/game.js"></script>
 
         <meta charset="utf-8">
 
@@ -17,12 +18,85 @@
     </head>
     <body>
 
-        <img src="assets/images/LOTR.png" id="background-image">
-        
-        <br>
+        <div class="container">
 
-        <a id="title">Role Playing Game</a>
+            <div class="row d-flex justify-content-center">
 
+                <img src="assets/images/LOTR.png" id="background-image">
+
+            </div>
+
+            <div class="row d-flex justify-content-center">
+
+                <a id="title">Role Playing Game</a>
+
+            </div>
+
+        </div>
+
+        <br><br><br>
+
+        <div class="container images">
+
+            <div class="row choose" id="choose-head">
+                Choose your Character:
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-2 column good" id="aragorn-card">
+
+                    <a class="name-card">Aragorn: Ranger of the North</a>
+
+                    <img src="assets/images/aragorn.png" class="image">
+                    Health: <a id="aragorn"></a>
+
+                </div>
+
+                
+
+                <div class="col-md-2 column good" id="legolas-card">
+
+                    <a class="name-card">Legolas: Elf Prince of Mirkwood</a>
+
+                    <img src="assets/images/legolas.png" class="image">
+                    Health: <a id="legolas"></a>
+
+                </div>
+
+                
+
+                <div class="col-md-2 column bad" id="saruman-card">
+
+                    <a class="name-card">Saruman: White Wizard</a>
+
+                    <img src="assets/images/saruman.png" class="image">
+                    Health: <a id="saruman"></a>
+
+                </div>
+
+            
+                <div class="col-md-2 column bad" id="witch-king-card">
+
+                    <a class="name-card">The Witch King: Ring Wraith</a>
+
+                    <img src="assets/images/witch-king.png" class="image">
+                    Health: <a id="witch-king"></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <br><br>
+
+        <div class="container">
+
+                <div class="row" id="your-enemies"></div>
+
+                <div class="row" id="enemies"></div>
+        </div>
 
     </body>
         
