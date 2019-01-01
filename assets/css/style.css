@@ -32,7 +32,6 @@ body {
 .column {
     color: rgb(249,173,0);
     margin: 30px;
-    margin-bottom: 0px;
     background-color: rgb(54, 54, 54);
     border: 1px solid rgb(161,82,0);
     border-radius: 5%;
@@ -62,14 +61,6 @@ body {
 }
 
 .choose {
-    color: rgb(249,173,0);
-    font-size: 20px;
-    font-family: fantasy;
-    text-shadow: -2px 0px 0px rgb(161,82,0);
-    margin-left: 30px;
-}
-
-#your-enemies {
     color: rgb(249,173,0);
     font-size: 20px;
     font-family: fantasy;

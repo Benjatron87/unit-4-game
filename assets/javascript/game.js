@@ -5,6 +5,13 @@ $(document).ready(function() {
     var aragornCard = $("#aragorn-card");
     var sarumanCard = $("#saruman-card");
     var witchkingCard = $("#witch-king-card");
+
+    function gamePlay(x, y){
+        $(x).click(function(){
+            $("#fighting").html("You Are Fighting:");
+            $("#defender").append(y);
+        })
+    }
    
     $("#aragorn-card").click(function(){
 
@@ -19,6 +26,11 @@ $(document).ready(function() {
         $("#enemies").append(sarumanCard);
 
         $("#choose-head").text("You Have Chosen Aragorn!");
+
+        gamePlay("#legolas-card", legolasCard);
+        gamePlay("#saruman-card", sarumanCard);
+        gamePlay("#witch-king-card", witchkingCard);
+
     });
 
     $("#legolas-card").click(function(){
@@ -33,6 +45,11 @@ $(document).ready(function() {
         $("#enemies").append(sarumanCard);
 
         $("#choose-head").text("You Have Chosen Legolas!");
+
+        gamePlay("#aragorn-card", aragornCard);
+        gamePlay("#saruman-card", sarumanCard);
+        gamePlay("#witch-king-card", witchkingCard);
+    
     });
 
     $("#saruman-card").click(function(){
@@ -47,6 +64,10 @@ $(document).ready(function() {
         $("#enemies").append(witchkingCard);
 
         $("#choose-head").text("You Have Chosen Saruman!");
+
+        gamePlay("#legolas-card", legolasCard);
+        gamePlay("#aragorn-card", aragornCard);
+        gamePlay("#witch-king-card", witchkingCard);
     });
 
     $("#witch-king-card").click(function(){
@@ -61,6 +82,10 @@ $(document).ready(function() {
         $("#enemies").append(sarumanCard);
 
         $("#choose-head").text("You Have Chosen The Witch King!");
+
+        gamePlay("#legolas-card", legolasCard);
+        gamePlay("#saruman-card", sarumanCard);
+        gamePlay("#aragorn-card", aragornCard);
     });
 
     var aragorn = {health: "120", damage: "10"};
