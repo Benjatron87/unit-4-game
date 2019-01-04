@@ -21,12 +21,12 @@ body {
 }
 
 .image {
-    height: 10vw;
-    width: 8vw;
+    float: left;
+    height: 8vw;
+    width: 6vw;
     border-radius: 50%;
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 5px;
 }
 
 .column {
@@ -71,4 +71,22 @@ body {
 #your-choice {
     width: 200px;
     float: left;
+}
+
+#button {
+    color: rgb(249,173,0);
+    font-size: 20px;
+    font-family: fantasy;
+    text-shadow: -2px 0px 0px rgb(161,82,0);
+    margin-left: 30px;
+    width: 70px;
+    padding: 6px;
+    padding-top: 10px;
+    border-radius: 10%;
+    background: red;
+    border: 1px solid rgb(172, 0, 0);
+}
+
+#button:hover {
+    cursor: pointer;
 }
