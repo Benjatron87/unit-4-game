@@ -1,146 +1,142 @@
 
- var play = true;
 
-$(document).ready(function() {
+$(document).ready(function reset() {
 
-    var aragorn = {health: 120, damage: 8};
-    var legolas = {health: 100, damage: 8};
-    var saruman = {health: 90, damage: 8};
-    var witchking = {health: 150, damage: 8};
+    // Giving the html cards js values.
+    var aragornHit = $("#aragorn-card");
+    var legolasHit = $("#legolas-card");
+    var gandalfHit = $("#gandalf-card");
+    var gimliHit = $("#gimli-card");
 
-    $("#aragorn").text(aragorn.health);
-    $("#legolas").text(legolas.health);
-    $("#saruman").text(saruman.health);
-    $("#witch-king").text(witchking.health);
+    // Stating necessary variables.
+    var wins = 0;
+    var losses = 0;
+    var hitPoints = 0;
+    var characters = [];
 
+    // Giving random number values for the "characters" array.
+    for (var i = 0; i < 4; i++){
+        characters.push( Math.floor(Math.random() * 12) + 1);
+    }
 
-    var legolasCard = $("#legolas-card");
-    var aragornCard = $("#aragorn-card");
-    var sarumanCard = $("#saruman-card");
-    var witchkingCard = $("#witch-king-card");
+    // Making the random number an attribute to the html cards.
+    aragornHit.attr("data-hit", characters[0]);
+    legolasHit.attr("data-hit", characters[1]);
+    gimliHit.attr("data-hit", characters[2]);
+    gandalfHit.attr("data-hit", characters[3]);
 
+    // Creating a random number betweeen 19-120 for the Balrog.
+    var balrog = Math.floor(Math.random() * (120 - 19 + 1) ) + 19;
 
-            function setUp (x, y, z){
-                $(x).remove();
-                $(y).remove();
-                $(z).remove();
-            }
+    // Putting the values for balrog, wins, hitPoints, and losses onto the html.
+    $("#balrog-health").html(balrog);
+    $("#wins").html(wins);
+    $("#losses").html(losses);
+    $("#hit-points").html(hitPoints);
 
-            function enemySet (x, y, z){
-                $("#enemies").append(x);
-                $("#enemies").append(y);
-                $("#enemies").append(z);
-            }
-
-            function gameplay(x, y, z){
-
-                if(play === true){
-
-                    $("#attack-button").text("Attack").attr("id", "button");
-
-                    $("#fighting").html("You Are Fighting:");
-                    $("#defender").append(x);
-                    $('html, body').animate({scrollTop: '+=500px'}, 1000);
-
-                    $("#button").click(function(){
-
-                        z.damage = 24
-                        y.health -= z.damage;
-                        z.health -= y.damage;
-                        y.damage += 8;
-                        
-
-                        $("#aragorn").text(aragorn.health);
-                        $("#legolas").text(legolas.health);
-                        $("#saruman").text(saruman.health);
-                        $("#witch-king").text(witchking.health);
-
-
-                        // if (y.health <= 0){
-                        //     play = false;
-                        // }
-        
-                        if (z.health <= 0){
-                            $("#defender").empty();
-                            $("#fighting").remove();
-                            $("#button").hide();
-                            // play = false;
-                            $("#saruman-card").click(function(){gameplay(sarumanCard, aragorn, saruman)});
-                        }
-                    });
-                }
-            }
-            
-            
-
-    $("#aragorn-card").click(function(){
-
-        setUp("#legolas-card", "#saruman-card", "#witch-king-card");
-        
-        $("#your-enemies").html("Your Enemies Are:");
-
-        enemySet(legolasCard, sarumanCard, witchkingCard);
-
-        $("#choose-head").text("You Have Chosen Aragorn!");
-        $('html, body').animate({scrollTop: '+=800px'}, 1000);
-
-        console.log(aragorn.health);
-        console.log(legolas.health);
-        console.log(saruman.health);
-        console.log(witchking.health);
-
-        $("#legolas-card").click(function(){gameplay(legolasCard, aragorn, legolas)});
-        // $("#saruman-card").click(function(){gameplay(sarumanCard, aragorn, saruman)});
-        $("#witch-king-card").click(function(){gameplay(witchkingCard, aragorn, witchking)});
-    });
-
-        
-
-    $("#legolas-card").click(function(){
-        setUp("aragorn-card", "#saruman-card", "#witch-king-card");
-
-        $("#your-enemies").html("Your Enemies Are:");
-
-        enemySet(aragornCard, sarumanCard, witchkingCard);
-
-        $("#choose-head").text("You Have Chosen Legolas!");
-        $('html, body').animate({scrollTop: '+=800px'}, 1000);
-
-        $("#legolas-card").click(function(){gameplay(legolasCard, legolas, aragorn)});
-        $("#saruman-card").click(function(){gameplay(sarumanCard, legolas, saruman)});
-        $("#witch-king-card").click(function(){gameplay(witchkingCard, legolas, witchking)});
+    // Hides the "play again" button.
+    $("#button").hide();
     
-    });
+    // Function to reset all values and hide or show certain html elements.
+    function setUp(){
 
-    $("#saruman-card").click(function(){
-        setUp("#legolas-card", "#aragorn-card", "#witch-king-card");
+        // Hides the "play again" button again.
+        $("#button").hide();
 
-        $("#your-enemies").html("Your Enemies Are:");
+        // Clears the text that says either "you lost" or "you win".
+        $("#outcome").html("");
 
-        enemySet(aragornCard, legolasCard, witchkingCard);
+        // Reveals necessary html elements.
+        $("#points").show();
+        $("#choose-head").show();
+        $("#balrog-card").show();
+        $("#characters").show();
 
-        $("#choose-head").text("You Have Chosen Saruman!");
-        $('html, body').animate({scrollTop: '+=800px'}, 1000);
+        // Resets the "characters" array to empty.
+        characters = [];
 
+        // Giving random number values for the "characters" array.
+        for (i = 0; i < 4; i++){
+            characters.push( Math.floor(Math.random() * 12) + 1);
+        }
 
-        $("#legolas-card").click(function(){gameplay(legolasCard, aragorn, legolas)});
-        $("#saruman-card").click(function(){gameplay(sarumanCard, aragorn, saruman)});
-        $("#witch-king-card").click(function(){gameplay(witchkingCard, aragorn, witchking)});
-    });
+        // Making the random number an attribute to the html cards.
+        aragornHit.attr("data-hit", characters[0]);
+        legolasHit.attr("data-hit", characters[1]);
+        gimliHit.attr("data-hit", characters[2]);
+        gandalfHit.attr("data-hit", characters[3]);
 
-    $("#witch-king-card").click(function(){
-        setUp("#legolas-card", "#saruman-card", "#aragorn-card");
+        // Creating a random number betweeen 19-120 for the Balrog.
+        balrog = Math.floor(Math.random() * (120 - 19 + 1) ) + 19;
 
-        $("#your-enemies").html("Your Enemies Are:");
+        // Putting the values for balrog, and hitPoints onto the html.
+        $("#balrog-health").html(balrog);
+        $("#hit-points").html(hitPoints);
+    }
 
-        enemySet(aragornCard, legolasCard, sarumanCard);
+    // When any card is clicked, the following happens.
+    $(".good").on("click", function() {
 
-        $("#choose-head").text("You Have Chosen The Witch King!");
-        $('html, body').animate({scrollTop: '+=800px'}, 1000);
+        // Pulls the random number based on the specific card's attribute.
+        var hit = ($(this).attr("data-hit"));
 
-        $("#legolas-card").click(function(){gameplay(legolasCard, aragorn, legolas)});
-        $("#saruman-card").click(function(){gameplay(sarumanCard, aragorn, saruman)});
-        $("#witch-king-card").click(function(){gameplay(witchkingCard, aragorn, witchking)});
+        // Using parseInt to make sure the attribute value is not a string and is a number.
+        hit = parseInt(hit);
+
+        // If hitPoints is less than balrog, then add hit to hitPoints and add that new value to the html.
+        if(hitPoints < balrog){
+
+            hitPoints += hit;
+            $("#hit-points").html(hitPoints);
+        }
+
+        // If hitPoints is greater than balrog you lose.
+        if (hitPoints > balrog){
+            
+            // Shows the "play again" button and tells you that you lose.
+            $("#button").show();
+            $("#outcome").html("The Balrog Has Defeated You!");
+
+            // Hides the character cards and the intro paragraph.
+            $("#choose-head").hide();
+            $("#characters").hide();
+
+            // Resets the hitPoints value.
+            hitPoints = 0;
+
+            // Adds one to losses.
+            losses++;
+
+            // displays losses to the html.
+            $("#losses").html(losses);
+
+            // When the "play again" button is clicked, run the setUp function above.
+            $("#button").click(setUp);
+        }
+
+        // If hitPoints equals balrog, then you win.
+        if(hitPoints === balrog){
+            
+            // Shows the "play again" button and tells you that you win.
+            $("#button").show();
+            $("#outcome").show().html("You Have Defeated The Balrog!");
+
+            // hides the balrog card and the intro paragraph.
+            $("#choose-head").hide();
+            $("#balrog-card").hide();
+
+            // Resets the hitPoints value.
+            hitPoints = 0;
+
+            // Adds one to wins.
+            wins++;
+
+            // Displays wins to the html.
+            $("#wins").html(wins);
+    
+            // When the "play again" button is clicked, run the setUp function above.
+            $("#button").click(setUp);
+        }
     });
 
 });

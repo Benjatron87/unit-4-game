@@ -28,21 +28,41 @@
 
             <div class="row d-flex justify-content-center">
 
-                <a id="title">Role Playing Game</a>
+                <a id="title">Random Number Game</a>
+
+            </div>
+
+            <br><br>
+
+            <div class="row choose" id="choose-head">
+                    To defeat the Balrog, you must work together to match his health.  Each character delivers an unknown amount of damage. Click them to fight, and to find out their hitpoints. Add up their attacks to equal the Balrog's health. It must match perfectly to win!
+            </div>
+
+        </div>
+
+        <div class="container d-flex justify-content-center">
+
+            <div class="row d-flex justify-content-center">
+
+                    <p id="button">Play Again</p>
 
             </div>
 
         </div>
 
-        <br><br><br>
+        <br>
 
-        <div class="container images">
+        <div class="containter">
 
-            <div class="row choose" id="choose-head">
-                Choose your Character:
+            <div class="row d-flex justify-content-center" id="outcome">
+
             </div>
 
-            <div class="row">
+        </div>
+
+        <div class="container images" id="characters">
+
+            <div class="row d-flex justify-content-center">
 
                 <div class="col-md-2 column good" id="aragorn-card">
 
@@ -58,14 +78,6 @@
 
                     </div>
 
-                    <div class="row d-flex justify-content-center">
-
-                        Health:
-                
-                        <a id="aragorn"></a>
-
-                    </div>
-
                 </div>
 
                 
@@ -74,72 +86,49 @@
 
                         <div class="row d-flex justify-content-center">
 
-                                <a class="name-card">Legolas</a>
+                            <a class="name-card">Legolas</a>
         
-                            </div>
+                        </div>
         
-                            <div class="row d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center">
         
-                                <img src="assets/images/legolas.png" class="image">
+                            <img src="assets/images/legolas.png" class="image">
         
-                            </div>
-        
-                            <div class="row d-flex justify-content-center">
-        
-                                Health:
-                        
-                                <a id="legolas"></a>
-        
-                            </div>
+                        </div>
+
                 </div>
 
                 
-
-                <div class="col-md-2 column bad" id="saruman-card">
+                <div class="col-md-2 column good" id="gimli-card">
 
                         <div class="row d-flex justify-content-center">
 
-                                <a class="name-card">Saruman</a>
+                            <a class="name-card">Gimli</a>
         
-                            </div>
+                        </div>
         
-                            <div class="row d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center">
         
-                                <img src="assets/images/saruman.png" class="image">
+                            <img src="assets/images/Gimli.png" class="image">
         
-                            </div>
+                        </div>
         
-                            <div class="row d-flex justify-content-center">
-        
-                                Health:
-                        
-                                <a id="saruman"></a>
-        
-                            </div>
                 </div>
 
             
-                <div class="col-md-2 column bad" id="witch-king-card">
+                <div class="col-md-2 column good" id="gandalf-card">
 
                         <div class="row d-flex justify-content-center">
 
-                                <a class="name-card">The Witch King</a>
+                            <a class="name-card">Gandalf</a>
         
-                            </div>
+                        </div>
         
-                            <div class="row d-flex justify-content-center">
+                        <div class="row d-flex justify-content-center">
         
-                                <img src="assets/images/witch-king.png" class="image">
+                            <img src="assets/images/gandalf.png" class="image">
         
-                            </div>
-        
-                            <div class="row d-flex justify-content-center">
-        
-                                Health:
-                        
-                                <a id="witch-king"></a>
-        
-                            </div>
+                        </div>
 
                 </div>
 
@@ -147,23 +136,87 @@
 
         </div>
 
-        <br><br>
+        <div class="container d-flex justify-content-center">
 
-        <div class="container">
+                <div class="col-md-1 points wins" id="points">
 
-                <div class="row choose" id="your-enemies"></div>
+                        <div class="row d-flex justify-content-center">
+    
+                            <p>Wins</p>
+    
+                        </div>
+    
+                        <div class="row d-flex justify-content-center">
+    
+                            <a id="wins"></a>
+    
+                        </div>
+                        
+                </div>
 
-                <div class="row" id="enemies"></div>
+
+                <div class="col-md-1 points" id="points">
+
+                    <div class="row d-flex justify-content-center">
+
+                        <p>Hit Points</p>
+
+                    </div>
+
+                    <div class="row d-flex justify-content-center">
+
+                        <a id="hit-points"></a>
+
+                    </div>
+                    
+                </div>
+
+                <div class="col-md-1 points losses" id="points">
+
+                        <div class="row d-flex justify-content-center">
+    
+                            <p>Losses</p>
+    
+                        </div>
+    
+                        <div class="row d-flex justify-content-center">
+    
+                            <a id="losses"></a>
+    
+                        </div>
+                        
+                </div>
         </div>
 
+        
         <div class="container">
 
-                <div class="row choose" id="fighting"></div>
+            <div class="row d-flex justify-content-center">
 
-                <div class="row" id="defender"></div>
+                    <div class="col-md-3 column bad" id="balrog-card">
 
-                <div id="attack-button"></div>
+                            <div class="row d-flex justify-content-center">
+    
+                                <a class="name-card">The Balrog</a>
+            
+                            </div>
+            
+                            <div class="row d-flex justify-content-center">
+            
+                                <img src="assets/images/Balrog.png" class="image2">
+            
+                            </div>
 
+                            <div class="row d-flex justify-content-center">
+            
+                                Health:
+
+                                <a id="balrog-health"></a>
+                
+                            </div>
+    
+                    </div>
+            </div>
         </div>
 
     </body>
