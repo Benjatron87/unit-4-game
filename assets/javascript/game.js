@@ -75,7 +75,7 @@ $(document).ready(function reset() {
     }
 
     // When any card is clicked, the following happens.
-    $(".good").on("click", function() {
+    $(".good").unbind().on("click", function() {
 
         // Pulls the random number based on the specific card's attribute.
         var hit = ($(this).attr("data-hit"));
